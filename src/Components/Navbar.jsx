@@ -1,62 +1,96 @@
-
 import React, { useState } from 'react';
 import { assets } from '../assets/assets';
+import { Link } from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoClose } from 'react-icons/io5';
+
 
 const Navbar = () => {
-  const [menu, setMenu] = useState("Home");
+
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const leftPositionForMobileMenu = isOpen ? "left-0" : "left-[-150%]";
 
   return (
-    <div className='flex justify-between items-center py-3 md:py-3'>
-      <img src={assets.logo} alt="" className="w-40" />
 
-      <ul className='flex gap-5 text-[#49557e] text-lg font-[Outfit]'>
-        <li 
-          onClick={() => setMenu("Home")} 
-          className={`cursor-pointer pb-0.5 border-b-2 hover:text-[#cf3333] ${
-            menu === "Home" ? "text-[#cf3333] border-b-[#cf3333] font-bold" : "border-b-transparent"
-          }`}
-        >
-          Home
-        </li>
-        <li 
-          onClick={() => setMenu("Menu")} 
-          className={`cursor-pointer pb-0.5 border-b-2 hover:text-[#cf3333] ${
-            menu === "Menu" ? "text-[#cf3333] border-b-[#cf3333] font-bold" : "border-b-transparent"
-          }`}
-        >
-          Menu
-        </li>
-        <li 
-          onClick={() => setMenu("Mobile-App")} 
-          className={`cursor-pointer pb-0.5 border-b-2 hover:text-[#cf3333] ${
-            menu === "Mobile-App" ? "text-[#cf3333] border-b-[#cf3333] font-bold" : "border-b-transparent"
-          }`}
-        >
-          Mobile-App
-        </li>
-        <li 
-          onClick={() => setMenu("Contact Us")} 
-          className={`cursor-pointer pb-0.5 border-b-2 hover:text-[#cf3333] ${
-            menu === "Contact Us" ? "text-[#cf3333] border-b-[#cf3333] font-bold" : "border-b-transparent"
-          }`}
-        >
-          Contact Us
-        </li>
-      </ul>
+  
+    //header section 
 
-      <div className='flex items-center gap-10'>
-        <img src={assets.search_icon} alt="" />
 
-        <div className='relative'> 
-          <img src={assets.basket_icon} alt="" />
-          <div className='absolute min-w-2.5 min-h-2.5 bg-[#cf3333] rounded-md'></div>
+    <header className='bg-transparent shadow sticky top-0  z-10 '>
+
+      <div className='container mx-auto py-3 px-4 flex justify-between items-center '>
+
+        {/* logo section */}
+        
+        <img src={assets.logo} alt="" className="w-40" />
+
+        {/* navbar section */}
+      
+      <nav className='md:flex gap-x-4 hidden '>
+        <ul className='flex gap-x-4'>
+          <li><Link className="hover:text-[#7E364E]" to={'/'}> Home </Link></li>
+
+          <li><Link className="hover:text-[#7E364E]" to={'/menu'}> Menu </Link></li>
+          
+          <li><Link className="hover:text-[#7E364E]" to={'/mobile-app'}> Mobile-App </Link></li>
+          
+          <li><Link className="hover:text-[#7E364E]" to={'/contact'}> Contact us </Link></li>
+        </ul>
+      </nav>
+
+      {/* mobileMenu functionality section */}
+
+      {!isOpen && (
+        <div onClick={() => setIsOpen(true)} 
+        className='flex md:hidden cursor-pointer'>
+          <GiHamburgerMenu size={30}/>
         </div>
+      )}
+      {isOpen && (
+        <div onClick={() => setIsOpen(false)} 
+          className='flex md:hidden z-50 cursor-pointer'>
+          <IoClose size={30}/>
+        </div>
+      )}
 
-        <button className='border border-red-500 hover:bg-[#cf3333] hover:text-white bg-transparent text-gray-500 text-lg rounded-[50px] py-2.5 px-5 cursor-pointer transition'>
+      <div className={`fixed z-40 top-0 ${leftPositionForMobileMenu} h-screen w-screen transition-all duration-1000 ease-in-out bg-black/40 overflow-y-auto`}
+      >
+
+      <div className='bg-[#7E364E] w-[80%] flex justify-center items-center min-h-screen overflow-y-auto py-3 flex-col gap-4'>
+
+
+
+        <nav>
+        <ul className='flex flex-col gap-y-4 jusstify-center text-white'>
+          <li><Link className="hover:text-[#e7c8d2]" to={'/'}> Home </Link></li>
+
+          <li><Link className="hover:text-[#e7c8d2]" to={'/menu'}> Menu </Link></li>
+          
+          <li><Link className="hover:text-[#e7c8d2]" to={'/mobile-app'}> Mobile-App </Link></li>
+          
+          <li><Link className="hover:text-[#e7c8d2]" to={'/contact'}> Contact us </Link></li>
+        </ul>
+      </nav>
+
+      <button className='border hover:bg-[#c0607e] hover:text-black bg-[#e2adbe] rounded py-2 px-4 cursor-pointer transition '>
+          Sign In
+        </button>
+
+      </div>
+
+      </div>
+
+      
+        {/* button section */}
+
+        <button className='border hover:bg-[#c0607e] hover:text-white bg-[#e2adbe] rounded py-2 px-4 cursor-pointer transition md:block hidden'>
           Sign In
         </button>
       </div>
-    </div>
+      {/* </div> */}
+    </header>
   );
 }
 
@@ -95,7 +129,10 @@ export default Navbar;
 
 
 
-
+//  onClick={() => setMenu("Home")} 
+//             className={`cursor-pointer pb-0.5 border-b-2 hover:text-[#7E364E] ${
+//               menu === "Home" ? "text-[#7E364E] border-b-[#7E364E] font-bold" : "border-b-transparent"
+//             }`}
 
 
 
@@ -125,7 +162,7 @@ export default Navbar;
 
 //         onClick={()=>setMenu("Home")} 
 
-//         className={`${menu==="Home"?"active":""}  hover:text-[#cf3333] border-b-2 pb-0.5`} >
+//         className={`${menu==="Home"?"active":""}  hover:text-[#7E364E] border-b-2 pb-0.5`} >
 
 //         Home</li>
 
@@ -133,7 +170,7 @@ export default Navbar;
         
 //         onClick={()=>setMenu("Menu")} 
 
-//         className={`${menu==="Menu"?"active":""}  hover:text-[#cf3333] border-b-2 pb-0.5`} >
+//         className={`${menu==="Menu"?"active":""}  hover:text-[#7E364E] border-b-2 pb-0.5`} >
           
 //         Menu</li>
 
@@ -141,14 +178,14 @@ export default Navbar;
         
 //         onClick={()=>setMenu("Mobile-App")} 
 
-//         className={`${menu==="Mobile-App"?"active":""}  hover:text-[#cf3333] border-b-2 pb-0.5`} >
+//         className={`${menu==="Mobile-App"?"active":""}  hover:text-[#7E364E] border-b-2 pb-0.5`} >
         
 //         Mobile-App</li>
 //         <li
         
 //         onClick={()=>setMenu("Contact Us")} 
 
-//         className={`${menu==="Contact Us"?"active":""}  hover:text-[#cf3333] border-b-2 pb-0.5`} >
+//         className={`${menu==="Contact Us"?"active":""}  hover:text-[#7E364E] border-b-2 pb-0.5`} >
           
 //         Contact Us</li>
 
@@ -163,7 +200,7 @@ export default Navbar;
 //           <div className='dot'></div>
 //         </div>
 
-//         <button className='border border-red-500 hover:bg-[#cf3333] hover:text-white bg-transparent text-gray-500 text-lg rounded-[50px] py-2.5 px-5 cursor-pointer transition '>Sign In</button>
+//         <button className='border border-red-500 hover:bg-[#7E364E] hover:text-white bg-transparent text-gray-500 text-lg rounded-[50px] py-2.5 px-5 cursor-pointer transition '>Sign In</button>
 
 //       </div>
       
