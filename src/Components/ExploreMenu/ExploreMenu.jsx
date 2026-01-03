@@ -9,11 +9,11 @@ const ExploreMenu = ({category,setCategory}) => {
             <h2 className='text-3xl font-bold text-center mb-8'>Explore Our Menu</h2>
 
                 
-            <div className="mx-0 my-5 flex gap-8 overflow-x-auto overflow-y-hidden text-center scrollbar-hide">
+            <div className="mx-0 my-5 flex gap-8 overflow-x-auto overflow-y-hidden justify-start lg:justify-center text-center scrollbar-hide">
                 
 
                 {menu_list.map((item, index)=>{
-                    const isActive = category --- item.menu_name
+                    const isActive = category === item.menu_name
 
 
                     return (

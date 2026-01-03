@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { assets } from '../../assets/assets'
 import { IoIosAdd } from "react-icons/io";
 import { IoRemoveCircleOutline } from "react-icons/io5";
+import { StoreContext } from '../../Context/StoreContext';
 
 const FoodItem = ({id,name,price,description,image}) => {
 
-    const [itemCount,setItemCount] = useState(0)
+    // const [itemCount,setItemCount] = useState(0)
+
+    const {cartItems,addToCart,removeFromCart} = useContext(StoreContext)
 
 
 
@@ -15,18 +18,18 @@ const FoodItem = ({id,name,price,description,image}) => {
             
             <img className='w-full rounded-t-[15px] object-cover' src={image} alt="" />
 
-            {!itemCount
+            {!cartItems[id]
                 ?<IoIosAdd
-                    onClick={()=>setItemCount(prev=>prev+1)}
-                    className='w-8.5 absolute bottom-[15px] right-[15px] rounded-full bg-white  cursor-pointer text-xl shadow-lg'  />
+                    onClick={()=>addToCart(id)}
+                    className='w-8.5 absolute bottom-3.75 right-3.75 rounded-full bg-white  cursor-pointer text-xl shadow-lg'  />
                 :<div 
-                className='absolute bottom-[15px] right-[15px] flex items-center gap-2 p-1.5 bg-white rounded-full shadow-lg '>
+                className='absolute bottom-3.75 right-3.75 flex items-center gap-2 p-1.5 bg-white rounded-full shadow-lg '>
                     <IoRemoveCircleOutline
-                    onClick={()=>setItemCount(prev=>prev-1)}
+                    onClick={()=>removeFromCart(id)}
                      className='text-red-600 w-7' />
-                    <p>{itemCount}</p>
+                    <p>{cartItems[id]}</p>
                     <IoIosAdd
-                    onClick={()=>setItemCount(prev=>prev+1)} 
+                    onClick={()=>addToCart(id)} 
                     className='text-green-600 w-7'/>
                 </div>
             }

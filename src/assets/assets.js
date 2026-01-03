@@ -27,10 +27,10 @@ import food_13 from './food_13.png'
 import food_14 from './food_14.png'
 import food_15 from './food_15.png'
 import food_16 from './food_16.png'
-import food_17 from './food_17.png'
-import food_18 from './food_18.png'
-import food_19 from './food_19.png'
-import food_20 from './food_20.png'
+// import food_17 from './food_17.png'
+// import food_18 from './food_18.png'
+// import food_19 from './food_19.png'
+// import food_20 from './food_20.png'
 import food_21 from './food_21.png'
 import food_22 from './food_22.png'
 import food_23 from './food_23.png'
@@ -43,6 +43,10 @@ import food_29 from './food_29.png'
 import food_30 from './food_30.png'
 import food_31 from './food_31.png'
 import food_32 from './food_32.png'
+import cake_1 from './cake_1.jpg'
+import cake_2 from './cake_2.jpg'
+import cake_3 from './cake_3.jpg'
+import cake_4 from './cake_4.jpg'
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -93,7 +97,7 @@ export const menu_list = [
         menu_image: menu_1
     },
     {
-        menu_name: "Sharwama",
+        menu_name: "Salad",
         menu_image: menu_2
     },
     {
@@ -236,28 +240,28 @@ export const food_list = [
     }, {
         _id: "17",
         name: "Cup Cake",
-        image: food_17,
+        image: cake_1,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "18",
         name: "Vegan Cake",
-        image: food_18,
+        image: cake_2,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "19",
         name: "Butterscotch Cake",
-        image: food_19,
+        image: cake_3,
         price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "20",
         name: "Sliced Cake",
-        image: food_20,
+        image: cake_4,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
