@@ -12,6 +12,7 @@ const Home = () => {
       <Hero/>
       <ExploreMenu category={category} setCategory={setCategory} />
       <FoodDisplay category={category}/>
+    
     </div>
   )
 }
