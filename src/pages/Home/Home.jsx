@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Hero from './Hero'
-import ExploreMenu from '../../Components/ExploreMenu/ExploreMenu'
+import ExploreMenu from '../Menu/ExploreMenu'
 import FoodDisplay from '../../Components/Food Display/FoodDisplay';
 
 const Home = () => {

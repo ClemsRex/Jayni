@@ -26,7 +26,7 @@ const Navbar = () => {
           <ul className="flex gap-x-6">
             <li><Link className="hover:text-[#7E364E]" to="/">Home</Link></li>
             <li><Link className="hover:text-[#7E364E]" to="/menu">Menu</Link></li>
-            <li><Link className="hover:text-[#7E364E]" to="/mobile-app">Mobile App</Link></li>
+            <li><Link className="hover:text-[#7E364E]" to="/about">About Us</Link></li>
             <li><Link className="hover:text-[#7E364E]" to="/contact">Contact Us</Link></li>
           </ul>
         </nav>
@@ -61,7 +61,7 @@ const Navbar = () => {
             <ul className="flex flex-col gap-y-4 text-lg">
               <li><Link onClick={() => setIsOpen(false)} to="/">Home</Link></li>
               <li><Link onClick={() => setIsOpen(false)} to="/menu">Menu</Link></li>
-              <li><Link onClick={() => setIsOpen(false)} to="/mobile-app">Mobile App</Link></li>
+              <li><Link onClick={() => setIsOpen(false)} to="/about">About Us</Link></li>
               <li><Link onClick={() => setIsOpen(false)} to="/contact">Contact Us</Link></li>
             </ul>
           </nav>
