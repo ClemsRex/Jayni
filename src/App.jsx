@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Components/Navbar'
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
@@ -8,12 +8,20 @@ import Footer from './Components/Footer'
 import Menu from './pages/Menu/Menu'
 import About from './pages/About/About'
 import Contact from './pages/Contact/Contact'
+import Login from './Components/LogIn/Login'
 
 const App = () => {
+
+  const [showLogin,setShowLogin] = useState(false)
+
   return (
-    <div>
-      
-      <Navbar/>
+    <>
+
+
+    {showLogin?<Login setShowLogin={setShowLogin}/>:<></>}
+
+      <div>
+      <Navbar setShowLogin={setShowLogin}/>
 
       <Routes>
         <Route path='/' element={ <Home/> } />
@@ -24,10 +32,11 @@ const App = () => {
         <Route path='/placeOrder' element={ <PlaceOrder/> } />
 
       </Routes>
+      </div>
 
       <Footer/>
       
-    </div>
+    </>
   )
 }
 

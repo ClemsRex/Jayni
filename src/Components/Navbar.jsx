@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoClose } from 'react-icons/io5'
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
+
   const [isOpen, setIsOpen] = useState(false)
 
   // Prevent background scrolling when menu is open
@@ -32,7 +33,7 @@ const Navbar = () => {
         </nav>
 
         {/* Desktop Button */}
-        <button className="hidden md:block rounded bg-[#e2adbe] px-4 py-2 transition hover:bg-[#c0607e] hover:text-white">
+        <button onClick={()=> setShowLogin(true)} className="hidden md:block rounded bg-[#e2adbe] px-4 py-2 transition hover:bg-[#c0607e] hover:text-white">
           Sign In
         </button>
 
@@ -66,7 +67,7 @@ const Navbar = () => {
             </ul>
           </nav>
 
-          <button className="rounded bg-[#e2adbe] px-5 py-2 text-black transition hover:bg-[#c0607e]">
+          <button onClick={()=> setShowLogin(true)} className="rounded bg-[#e2adbe] px-5 py-2 text-black transition hover:bg-[#c0607e]">
             Sign In
           </button>
         </div>

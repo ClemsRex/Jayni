@@ -68,7 +68,7 @@ const ContactHero = () => {
               animate="animate"
               className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide mb-4"
             >
-              Know more About Our Brand
+              Get In Touch With Us
             </motion.h2>
     
             <motion.p
@@ -77,7 +77,7 @@ const ContactHero = () => {
               transition={{ duration: 1.2, delay: 0.3 }}
               className="text-lg md:text-xl text-gray-200"
             >
-              Services Rendered
+              For Special Services
             </motion.p>
           </div>
         </section>

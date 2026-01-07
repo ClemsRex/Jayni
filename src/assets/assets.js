@@ -41,10 +41,16 @@ import food_29 from './food_29.png'
 import food_30 from './food_30.png'
 import food_31 from './food_31.png'
 import food_32 from './food_32.png'
+
 import cake_1 from './cake_1.jpg'
 import cake_2 from './cake_2.jpg'
 import cake_3 from './cake_3.jpg'
 import cake_4 from './cake_4.jpg'
+
+import shawarma_1 from './shawarma_1.jpg'
+import shawarma_2 from './shawarma_2.jpg'
+import shawarma_3 from './shawarma_3.jpg'
+import shawarma_4 from './shawarma_4.jpg'
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -96,7 +102,7 @@ export const menu_list = [
         menu_image: menu_1
     },
     {
-        menu_name: "Salad",
+        menu_name: "Shawarma",
         menu_image: menu_2
     },
     {
@@ -123,84 +129,112 @@ export const menu_list = [
 export const food_list = [
     {
         _id: "1",
-        name: "Greek salad",
-        image: food_1,
+        name: "Wedding Cake",
+        image: cake_1,
+        price: 14,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Cake"
+    }, {
+        _id: "2",
+        name: "Birthday Cake",
+        image: cake_2,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
-    },
-    {
-        _id: "2",
-        name: "Veg salad",
-        image: food_2,
-        price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
+        category: "Cake"
     }, {
         _id: "3",
-        name: "Clover Salad",
-        image: food_3,
-        price: 16,
+        name: "Sliced Cake",
+        image: cake_3,
+        price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
+        category: "Cake"
     }, {
         _id: "4",
-        name: "Chicken Salad",
-        image: food_4,
+        name: "Themed Cake",
+        image: cake_4,
+        price: 15,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Cake"
+    },{
+        _id: "5",
+        name: "Chicken Shawarma",
+        image: shawarma_1,
+        price: 12,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Shawarma"
+    },
+    {
+        _id: "6",
+        name: "Beef Shawarma",
+        image: shawarma_2,
+        price: 18,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Shawarma"
+    }, {
+        _id: "7",
+        name: "Veg Shawarma",
+        image: shawarma_3,
+        price: 16,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Shawarma"
+    }, {
+        _id: "8",
+        name: "Mixed Shawarma",
+        image: shawarma_4,
         price: 24,
         description: "Food provides essential nutrients for overall health and well-being",
-        category: "Salad"
+        category: "Shawarma"
     }, {
-        _id: "5",
+        _id: "9",
         name: "Lasagna Rolls",
         image: food_5,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     }, {
-        _id: "6",
+        _id: "10",
         name: "Peri Peri Rolls",
         image: food_6,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     }, {
-        _id: "7",
+        _id: "11",
         name: "Chicken Rolls",
         image: food_7,
         price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     }, {
-        _id: "8",
+        _id: "12",
         name: "Veg Rolls",
         image: food_8,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Rolls"
     }, {
-        _id: "9",
+        _id: "13",
         name: "Ripple Ice Cream",
         image: food_9,
         price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts"
     }, {
-        _id: "10",
+        _id: "14",
         name: "Fruit Ice Cream",
         image: food_10,
         price: 22,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts"
     }, {
-        _id: "11",
+        _id: "15",
         name: "Jar Ice Cream",
         image: food_11,
         price: 10,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Deserts"
     }, {
-        _id: "12",
+        _id: "16",
         name: "Vanilla Ice Cream",
         image: food_12,
         price: 12,
@@ -208,7 +242,7 @@ export const food_list = [
         category: "Deserts"
     },
     {
-        _id: "13",
+        _id: "17",
         name: "Chicken Sandwich",
         image: food_13,
         price: 12,
@@ -216,55 +250,27 @@ export const food_list = [
         category: "Sandwich"
     },
     {
-        _id: "14",
+        _id: "18",
         name: "Vegan Sandwich",
         image: food_14,
         price: 18,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Sandwich"
     }, {
-        _id: "15",
+        _id: "19",
         name: "Grilled Sandwich",
         image: food_15,
         price: 16,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Sandwich"
     }, {
-        _id: "16",
+        _id: "20",
         name: "Bread Sandwich",
         image: food_16,
         price: 24,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Sandwich"
-    }, {
-        _id: "17",
-        name: "Cup Cake",
-        image: cake_1,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
-    }, {
-        _id: "18",
-        name: "Vegan Cake",
-        image: cake_2,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
-    }, {
-        _id: "19",
-        name: "Butterscotch Cake",
-        image: cake_3,
-        price: 20,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
-    }, {
-        _id: "20",
-        name: "Sliced Cake",
-        image: cake_4,
-        price: 15,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Cake"
-    }, {
+    },  {
         _id: "21",
         name: "Garlic Mushroom ",
         image: food_21,
